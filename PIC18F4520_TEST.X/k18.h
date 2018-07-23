@@ -3,22 +3,22 @@
  *                           k18.H
  *
  *********************************************************************
- * 文件名: k18.H
+ * ???: k18.H
  ********************************************************************/
 
 
 #ifndef __k18_h
 #define __k18_h
 
-/*变量类型标识的宏定义,通常做法*/
+/*??????????,????*/
 #define Uchar unsigned char
 #define Uint unsigned int
 #define OUT 0
 #define IN 1
 
-#define Fosc   40000000       /*定义晶振频率（单位 Hz）*/
+#define Fosc   10000000       /*????????? Hz?*/
 
-/* k18 引脚定义 */
+/* k18 ???? */
 
 #define AN   PORTAbits.RA0   		/* AN*/
 #define TRIS_AN  DDRAbits.RA0
@@ -87,7 +87,7 @@
 #define TRIS_SW3   DDRBbits.RB5
 
 
-/*为方便使用，部分管脚的多重定义*/
+/*???????????????*/
 
 #define M1   COL5   		/* M1*/
 #define TRIS_M1  TRIS_COL5
@@ -104,11 +104,11 @@
  
 
 
-/*注：液晶的管脚在LCD1602.H中定义*/
+/*????????LCD1602.H???*/
 
 
-//系统初始化函数
-void k18_init(void);/*k18主板初始化*/
+//???????
+void k18_init(void);/*k18?????*/
 
 
 #endif

@@ -1,7 +1,7 @@
 #define CONFIG
 #include <p18cxxx.h>
 #include "k18.h"
-#include "lcd1602.h"
+#include "Delay.h"
 
 #ifdef CONFIG
 // CONFIG1H
@@ -62,19 +62,21 @@
 
 void main(void)
 {
-k18_init(); 
-LCD_init();
-LCD_setxy(1,1);
-LCD_wrstr("-XINGHE WANG LOL-");/*œ‘ æ±æ’æÕ¯µÿ÷∑*/
-LCD_setxy(2,1);
-LCD_wrstr("A");/*??????A*/
-LCD_wrstr("b");/*??????b*/
-LCD_wrstr("7");/*????????7*/
-/*???????*/
-LCD_setxy(2,9);
-LCD_wrchar("3");		
+    unsigned char a = 0x01;
+    unsigned char  b;
 
+    k18_init();/*HL-K18?????*/
 
-while(1);
+    TRISD=0X00;/*??D????*/
 
+    COL1=1;/*??????????LED?????????LED????LED*/
+
+    while(1)
+        {
+            PORTD=0B11111111;
+            /*??????*/
+            Delay10Ms(100);/*??50mS*/
+            PORTD=00000000;
+            Delay10Ms(100);/*??50mS*/
+        } 
 }
